@@ -1,63 +1,66 @@
-main {
-    height: 100vh;      
-    font-size: 200%;
-    width: 900px;
-    margin: auto;
-    text-align: center;
-}
-main a {
-    margin: 20px;
-    text-decoration: none;
-    background: #14646a;
-    color: #fff;
-    padding: 10xp;
-    border-radius: 10px;
-}
 body{
     background: url('../img/dawn.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position:bottom center;
-}
-
-input {
-    padding: 10px;
-    border-radius: 10px;
-    background: rgba(100, 100, 100, 0.8);
-    border: none;
-    color: #fff;
     font-size: 14px;
-    box-shadow: 0 0 20px 5px white;
 }
-
-#temp {
-    border-radius: 50px;
-    background: rgba(0, 0, 0, 0.8);
+.navbar-header{
     color: #fff;
-    padding: 20px;
-    margin: 20px;
+    font-size: 24px;
+    padding: 10px;
 }
-
-#name {
-
-    border-radius: 50px;
-    background: #0532afc0;
-    ;
-    padding: 20px;
-    color: #fff;
-    margin: 20px;
+main {
+    min-height: 100vh;      
+    margin: auto;
+    text-align: center;
+    
+    a {
+        margin: 20px;
+        text-decoration: none;
+        background: #14646a;
+        color: #fff;
+        padding: 10xp;
+        border-radius: 10px;
+    }
+    h3{
+        font-size:3em;
+        font-weight: 700;
+        letter-spacing: 2px;
+        color: #fff;
+        background: linear-gradient(to right, transparent, black, transparent);
+    }
 }
-
-#main {
-
-    margin: 20px;
-    border-radius: 50px;
-    background: hsla(49, 100%, 57%, 0.753);
-    ;
-    padding: 20px;
-    color: #fff;
+.map{
+    height: 50vh;
 }
-.info{
-    font-size: 12px;
-    color:#fff;
+.weather {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .day{
+        min-width: 200px;
+        border: 1px solid #000;
+        border-radius: 5px;
+        p{
+            background: #000;
+            color: #fff;
+            font-size:1.5em;
+        }
+        .temp {
+            border-radius: 50px;
+            background: hsla(49, 100%, 57%, 0.753);
+            padding: 10px;
+            margin: 5px;
+        }
+        .mainWeather {
+
+            margin: 5px;
+            border-radius: 50px;
+            background: hsla(49, 100%, 57%, 0.753);
+            padding: 10px;
+        }
+        
+    }
 }

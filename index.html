@@ -17,31 +17,45 @@
         <nav class="navbar navbar-inverse">
                 <div class="container-fluid">
                   <div class="navbar-header">
-                    Check Weather
+                    Weather APP 
                   </div>
                   
-                  <form class="navbar-form navbar-left" id="form" action="#">
+                  <form class="navbar-form navbar-right" id="form" action="#">
                     <div class="form-group">
-                      <input type="text" id="city" class="form-control" placeholder="Search">
+                      <input type="text" id="city" class="form-control" placeholder="Enter City">
                     </div>
                     <button type="submit" class="btn btn-default">Check</button>
                   </form>
                 </div>
         </nav>
     <main>
-            
-        <h1>Check the weather</h1>
-        <!-- <form id="form" action="form.php">
-            <input type="text" id="city" placeholder="city">
-            <input type="submit" id="submit" value="Search">
-        </form> -->
-        <h3>Weather: </h3>
+      <section class="map">
 
-        <p id="name"></p>
-        <div id="main"></div>
-        <div id="temp"></div>
-        <a href="http://piotrwebdev.pl">Back to website</a>
-        <p class="info">Info from openweathermap.org</p>
+      </section>
+      <h3>WEATHER</h3>
+       <section class="weather">    
+       
+        <div class="day">
+          <p id="today">Today</p>
+          <div class="mainWeather" id="main"></div>
+          <div class="temp" id="temp"></div>
+        </div>
+        <div class="day">
+          <p id="tommorow"></p>
+          <div class="mainWeather" id="main1"></div>
+          <div class="temp" id="temp1"></div>
+        </div>
+        <div class="day">
+          <p id="secondDay"></p>
+          <div class="mainWeather" id="main2"></div>
+          <div class="temp" id="temp2"></div>
+        </div>
+        <div class="day">
+          <p id="thirdDay"></p>
+          <div class="mainWeather" id="main3"></div>
+          <div class="temp" id="temp3"></div>
+        </div>
+      </section> 
     </main>
 
 
