@@ -6,80 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
-    <style>
-        main {
-            
-            font-size: 200%;
-            width: 900px;
-            margin: auto;
-            text-align: center;
-        }
-        main a {
-            margin: 20px;
-            text-decoration: none;
-            background: #14646a;
-            color: #fff;
-            padding: 10xp;
-            border-radius: 10px;
-        }
-        body{
-            background: url('img/dawn.jpg');
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
+    
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-        input {
-            padding: 10px;
-            border-radius: 10px;
-            background: rgba(100, 100, 100, 0.8);
-            border: none;
-            color: #fff;
-            font-size: 14px;
-            box-shadow: 0 0 20px 5px white;
-        }
-
-        #temp {
-            border-radius: 50px;
-            background: rgba(0, 0, 0, 0.8);
-            color: #fff;
-            padding: 20px;
-            margin: 20px;
-        }
-
-        #name {
-
-            border-radius: 50px;
-            background: #0532afc0;
-            ;
-            padding: 20px;
-            color: #fff;
-            margin: 20px;
-        }
-
-        #main {
-
-            margin: 20px;
-            border-radius: 50px;
-            background: hsla(49, 100%, 57%, 0.753);
-            ;
-            padding: 20px;
-            color: #fff;
-        }
-        .info{
-            font-size: 12px;
-            color:#fff;
-        }
-    </style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
+        <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    Check Weather
+                  </div>
+                  
+                  <form class="navbar-form navbar-left" id="form" action="#">
+                    <div class="form-group">
+                      <input type="text" id="city" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Check</button>
+                  </form>
+                </div>
+        </nav>
     <main>
-        <h1>Enter the city</h1>
-        <form id="form" action="form.php">
+            
+        <h1>Check the weather</h1>
+        <!-- <form id="form" action="form.php">
             <input type="text" id="city" placeholder="city">
             <input type="submit" id="submit" value="Search">
-        </form>
+        </form> -->
         <h3>Weather: </h3>
 
         <p id="name"></p>
@@ -90,59 +45,13 @@
     </main>
 
 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-    <script>
-        window.onload = function () {
-            //console.log("loaded")
-            let form = document.getElementById('form');
-            form.addEventListener('submit', load);
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-            function load(e) {
-                e.preventDefault();
-                let temp = document.getElementById("temp");
-                let city = document.getElementById("city");
-                let name = document.getElementById('name')
-                let main = document.getElementById('main')
-                let div = document.querySelector('main')
-                var data
-                ///console.log(city.value)
-                var xhttp = new XMLHttpRequest();
-                xhttp.responseType = "json";
-                xhttp.open('POST', 'http://api.openweathermap.org/data/2.5/weather?q=' + city.value +
-                    '&appid=0a6b59f9dfbf75051d17766f20204ab0&units=metric');
-                xhttp.onreadystatechange = function () {
-                    if (this.readyState = 4 && this.status == 200) {
-
-                        data = this.response
-                        //console.log(typeof (this.response))
-                        name.innerHTML = "Entered city: " + data.name
-                        temp.innerHTML = "Temperature: " + data.main.temp + " Celcius"
-                        main.innerHTML = "Weather: " + data.weather[0].main
-                        if (data.weather[0].main == "Clouds") {
-                            //console.log("cloud");
-                            document.body.style.background = "url('img/clouds.jpg')"
-                        } else if (data.weather[0].main == "Thunderstorm") {
-
-                            document.body.style.background = "url('img/storm.jpg')"
-                        } else if (data.weather[0].main == "Rain") {
-
-                            document.body.style.background = "url('img/rain.jpg')"
-                        } else {
-                            document.body.style.background = "url('img/dawn.jpg')no-repeat"
-                            document.body.style.backgroundSize = "cover"
-                        }
-                    } else {
-                        name.innerHTML = "Wrong input value"
-                        temp.innerHTML = ""
-                        main.innerHTML = ""
-                    }
-                }
-                xhttp.send();
-            }
-
-
-        };
-    </script>
+    <script src="js/main.js" ></script>
 </body>
 
 </html>
