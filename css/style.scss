@@ -32,7 +32,7 @@ main {
     }
 }
 .map{
-    height: 50vh;
+    height: 60vh;
 }
 .weather {
     display: flex;
@@ -43,23 +43,18 @@ main {
         min-width: 200px;
         border: 1px solid #000;
         border-radius: 5px;
+        font-size: 1.2em;
         p{
             background: #000;
             color: #fff;
             font-size:1.5em;
         }
-        .temp {
-            border-radius: 50px;
-            background: hsla(49, 100%, 57%, 0.753);
-            padding: 10px;
-            margin: 5px;
-        }
         .mainWeather {
-
             margin: 5px;
-            border-radius: 50px;
-            background: hsla(49, 100%, 57%, 0.753);
+            border-radius: 5px;
+            background: hsla(0, 0%, 73%, 0.753);
             padding: 10px;
+            font-weight: 700;
         }
         
     }

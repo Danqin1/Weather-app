@@ -29,7 +29,7 @@ main {
     background: linear-gradient(to right, transparent, black, transparent); }
 
 .map {
-  height: 50vh; }
+  height: 60vh; }
 
 .weather {
   display: flex;
@@ -39,20 +39,17 @@ main {
   .weather .day {
     min-width: 200px;
     border: 1px solid #000;
-    border-radius: 5px; }
+    border-radius: 5px;
+    font-size: 1.2em; }
     .weather .day p {
       background: #000;
       color: #fff;
       font-size: 1.5em; }
-    .weather .day .temp {
-      border-radius: 50px;
-      background: rgba(255, 215, 36, 0.753);
-      padding: 10px;
-      margin: 5px; }
     .weather .day .mainWeather {
       margin: 5px;
-      border-radius: 50px;
-      background: rgba(255, 215, 36, 0.753);
-      padding: 10px; }
+      border-radius: 5px;
+      background: rgba(186, 186, 186, 0.753);
+      padding: 10px;
+      font-weight: 700; }
 
 /*# sourceMappingURL=style.css.map */
