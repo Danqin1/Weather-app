@@ -6,68 +6,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather App</title>
-    
-    <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-        <nav class="navbar navbar-inverse navbar-fixed-top">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    Weather APP 
-                  </div>
-                  
-                  <form class="navbar-form navbar-right" id="form" action="#">
-                    <div class="form-group">
-                      <input type="text" id="city" class="form-control" placeholder="Enter City">
-                    </div>
-                    <button type="submit" class="btn btn-default">Check</button>
-                  </form>
-                </div>
-        </nav>
-    <main>
-      <section class="map">
 
-      </section>
-      <h3>WEATHER</h3>
-       <section class="weather">    
-       
-        <div class="day">
-          <p id="today">Today</p>
-          <div class="mainWeather" id="main"></div>
-          <div class="mainWeather" id="temp"></div>
-          <div class="mainWeather" id="clouds"></div>
-          <div class="mainWeather" id="wind"></div>
-        </div>
-        <div class="day">
-          <p id="tommorow">Tommorow</p>
-          <div class="mainWeather" id="main1"></div>
-          <div class="mainWeather" id="temp1"></div>
-        </div>
-        <div class="day">
-          <p id="secondDay"></p>
-          <div class="mainWeather" id="main2"></div>
-          <div class="mainWeather" id="temp2"></div>
-        </div>
-        <div class="day">
-          <p id="thirdDay"></p>
-          <div class="mainWeather" id="main3"></div>
-          <div class="mainWeather" id="temp3"></div>
-        </div>
-      </section> 
+    <nav class="navbar navbar-light bg-dark">
+        <a class="navbar-brand">Weather APP</a>
+        <form id="form" action="form.php" class="form-inline">
+            <input id="city" class="form-control mr-sm-2" type="search" placeholder="Enter City" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </nav>
+    <section class="head">
+        <h1>Welcome to Weather APP! </br> Enter name of the city in navbar.</h1>
+    </section>
+    <main>
+        <section id="hours">
+            <h3>Weather for next 12 hours.</h3>
+            <table class="table table-bordered table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col">Time</th>
+                        <th scope="col">Weather</th>
+                        <th scope="col">Temperature</th>
+                        <th scope="col">Pressure</th>
+                        <th scope="col">Humidity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td scope="row" id="time1"></td>
+                        <td id="main1"></td>
+                        <td id="temp1"></td>
+                        <td id="pressure1"></td>
+                        <td id="humidity1"></td>
+                    </tr>
+                    <tr>
+                        <td scope="row2" id="time2"></td>
+                        <td id="main2"></td>
+                        <td id="temp2"></td>
+                        <td id="pressure2"></td>
+                        <td id="humidity2"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row3" id="time3"></th>
+                        <td id="main3"></td>
+                        <td id="temp3"></td>
+                        <td id="pressure3"></td>
+                        <td id="humidity3"></td>
+                    </tr>
+                    <tr>
+                        <th scope="row4" id="time4"></th>
+                        <td id="main4"></td>
+                        <td id="temp4"></td>
+                        <td id="pressure4"></td>
+                        <td id="humidity4"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="days">
+            <h3>Weather for next 5 days.</h3>
+            <div class="row justify-content-around">
+                <div class="col-sm-2 day row">
+                    <div class="col-12" id="imgD1">
+                    </div>
+                    <div class="col-12">
+                        <h5 id="mainD1"></h5>
+                        <p id="tempD1"></p>
+                    </div>
+                </div>
+                <div class="col-sm-2 day row">
+                    <div class="col-12" id="imgD2">
+                    </div>
+                    <div class="col-12">
+                        <h5 id="mainD2"></h5>
+                        <p id="tempD2"></p>
+                    </div>
+                </div>
+                <div class="col-sm-2 day row">
+                    <div class="col-12" id="imgD3">
+                    </div>
+                    <div class="col-12">
+                        <h5 id="mainD3"></h5>
+                        <p id="tempD3"></p>
+                    </div>
+                </div>
+                <div class="col-sm-2 day row">
+                    <div class="col-12" id="imgD4">
+                    </div>
+                    <div class="col-12">
+                        <h5 id="mainD4"></h5>
+                        <p id="tempD4"></p>
+                    </div>
+                </div>
+                <div class="col-sm-2 day row">
+                    <div class="col-12" id="imgD5">
+                    </div>
+                    <div class="col-12">
+                        <h5 id="mainD5"></h5>
+                        <p id="tempD5"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <script src="js/main.js" ></script>
+    <footer>
+        <button><a href="http://piotrwebdev.pl">Back to piotrwebdev.pl</a></button>
+        <p class="info">Info from openweathermap.org</p>
+    </footer>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
